@@ -5,8 +5,9 @@
 package me.web32.Armorizer;
 
 import java.io.IOException;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-import or.mcstats.Metrics;
+import org.mcstats.Metrics;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -68,18 +69,22 @@ public class Armorizer extends JavaPlugin {
             if(args.length == 1) {
                 if(args[0].equalsIgnoreCase("diamond") || args[0].equalsIgnoreCase("dia")) {
                     player.getInventory().setArmorContents(diamond);
+                    sender.sendMessage("You now wear " + ChatColor.AQUA + "diamond " + ChatColor.WHITE + "armor!");
                     return true;
                 }
                 if(args[0].equalsIgnoreCase("iron")) {
                     player.getInventory().setArmorContents(iron);
+                    sender.sendMessage("You now wear " + ChatColor.GRAY + "iron " + ChatColor.WHITE + "armor!");
                     return true;
                 }
                 if(args[0].equalsIgnoreCase("gold")) {
                     player.getInventory().setArmorContents(gold);
+                    sender.sendMessage("You now wear " + ChatColor.GOLD + "golden " + ChatColor.WHITE + "armor!");
                     return true;
                 }
                 if(args[0].equalsIgnoreCase("leather")) {
                     player.getInventory().setArmorContents(leather);
+                    sender.sendMessage("You now wear " + ChatColor.DARK_RED + "leather " + ChatColor.WHITE + "armor!");
                     return true;
                 }
             }
