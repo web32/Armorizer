@@ -68,24 +68,32 @@ public class Armorizer extends JavaPlugin {
         if(cmd.getName().equalsIgnoreCase("armor")) {
             if(args.length == 1) {
                 if(args[0].equalsIgnoreCase("diamond") || args[0].equalsIgnoreCase("dia")) {
-                    player.getInventory().setArmorContents(diamond);
-                    sender.sendMessage("You now wear " + ChatColor.AQUA + "diamond " + ChatColor.WHITE + "armor!");
-                    return true;
+                    if(sender.hasPermission("armorizer.armor.diamond") || sender.isOp()) {
+                        player.getInventory().setArmorContents(diamond);
+                        sender.sendMessage("You now wear " + ChatColor.AQUA + "diamond " + ChatColor.WHITE + "armor!");
+                        return true;
+                    }
                 }
                 if(args[0].equalsIgnoreCase("iron")) {
-                    player.getInventory().setArmorContents(iron);
-                    sender.sendMessage("You now wear " + ChatColor.GRAY + "iron " + ChatColor.WHITE + "armor!");
-                    return true;
+                    if(sender.hasPermission("armorizer.armor.iron") || sender.isOp()) {
+                        player.getInventory().setArmorContents(iron);
+                        sender.sendMessage("You now wear " + ChatColor.GRAY + "iron " + ChatColor.WHITE + "armor!");
+                        return true;
+                    }
                 }
                 if(args[0].equalsIgnoreCase("gold")) {
-                    player.getInventory().setArmorContents(gold);
-                    sender.sendMessage("You now wear " + ChatColor.GOLD + "golden " + ChatColor.WHITE + "armor!");
-                    return true;
+                    if(sender.hasPermission("armorizer.armor.gold") || sender.isOp()) {
+                        player.getInventory().setArmorContents(gold);
+                        sender.sendMessage("You now wear " + ChatColor.GOLD + "golden " + ChatColor.WHITE + "armor!");
+                        return true;                   
+                    }
                 }
                 if(args[0].equalsIgnoreCase("leather")) {
+                    if(sender.hasPermission("armorizer.armor.leather") || sender.isOp()) {
                     player.getInventory().setArmorContents(leather);
                     sender.sendMessage("You now wear " + ChatColor.DARK_RED + "leather " + ChatColor.WHITE + "armor!");
                     return true;
+                    }
                 }
             }
         }
