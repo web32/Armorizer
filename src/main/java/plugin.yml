@@ -1,0 +1,15 @@
+name: Armorizer
+author: web32
+version: 0.2.2
+main: me.web32.Armorizer.Armorizer
+
+prefix: Armorizer
+
+commands:
+  armor:
+    usage: For help type /armor help
+    
+  dearmor:
+    usage: For help type /armor help
+   
+  
